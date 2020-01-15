@@ -1,5 +1,4 @@
 <?php
-  include '../entity/user.php';
   include '../db/conexion.php';
   //require
   //require_once
@@ -46,9 +45,5 @@
     {
       // code...
     }
-  
   }
-  $um= new UserModel();
-  $user= new User("jose","jose","12345");
-  $um->crearRegistro($user);
  ?>

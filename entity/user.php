@@ -9,13 +9,10 @@
     private $username;
     private $password;
 
-    function __construct($name,$username,$password)
-    {
-      // code...
-      $this->name=$name;
-      $this->username=$username;
-      $this->password=$password;
+    #constructor vacio
+    function __construct(){
     }
+
     public function getId(){
       return $this->id;
     }
