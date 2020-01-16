@@ -11,7 +11,6 @@
       try{
         $conexion= new PDO('mysql:host='.$this->host.';dbname='.$this->dbname,$this->user,$this->pwd);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "conexion exitosa";
         return $conexion;
       }catch(PDOException $e){
         echo "Error de conexion: ".$e->getMessage();

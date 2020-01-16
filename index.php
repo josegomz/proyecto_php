@@ -11,7 +11,7 @@
     <br>
     <ul>
         <li><a href="view/crearRegistro.html">Crear registro</a></li>
-        <li><a href="view/mostrarRegistro.php">Mostrar registro</a></li>
+        <li><a href="view/obtenerRegistros.php">Mostrar registro</a></li>
     </ul>
 </body>
 </html>

@@ -9,5 +9,5 @@
     $user->setPassword(filter_input(INPUT_POST,'password',FILTER_SANITIZE_SPECIAL_CHARS));
     $model = new userModel();
     $model->crearRegistro($user);
-
+    header('Location: ../view/obtenerRegistros.php');
 ?>

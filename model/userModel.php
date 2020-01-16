@@ -29,9 +29,22 @@
         die();
       }
     }
-    public function eliminarRegistro()
+    public function eliminarRegistro($user)
     {
       // code...
+      try{
+        $conexion = new Conexion();
+        $db = $conexion->getConnection();
+        $querySQL = "DELETE FROM user WHERE id=:idUser";
+        $statement=$db->prepare($querySQL);
+        $idUser=$user->getId();
+        $statement->bindParam(':idUser',$idUser);
+        $statement->execute();
+      }catch(PDOException $e){
+        echo "Error al eliminar el registro".$e->getMessage();
+        die();
+      }
+      
     }
     public function actualizarRegistro()
     {
@@ -43,7 +56,21 @@
     }
     public function mostrarRegistros()
     {
-      // code...
-    }
+      try{
+        # code...
+        $conexion = new Conexion();
+        $db = $conexion->getConnection();
+        $querySQL = "SELECT * FROM user";
+        $statement=$db->prepare($querySQL);
+        $statement->execute();
+        while($resultSet = $statement->fetch()){
+          $rowResultSet[]=$resultSet;
+        }
+        return $rowResultSet;
+      }catch(PDOException $e){
+        echo "error de lectura ".$e->getMessage();
+        die();
+      }
+    } 
   }
  ?>
